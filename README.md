@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/af48673f-6201-4fef-a1b3-34441fd9fa2a)
+![image](https://github.com/user-attachments/assets/f68dd564-13b7-4949-98fe-6527e3827522)
+
 
  🐍 Snake Game
 
