@@ -1,29 +1,47 @@
-# HTML Template Repository with HTML Proofer
+## 🐍 Snake Game
 
-This template repository includes preconfigured GitHub Action that will validate html files in a project with (HTMLProofer)[https://github.com/gjtorikian/html-proofer/].
-And htmx to load partials
+Класична аркадна гра **Snake**, реалізована на чистому JavaScript з використанням HTML5 Canvas. Гравець керує змійкою, яка росте, поїдаючи їжу, та має уникати зіткнень із собою та стінами. Результати зберігаються в таблиці лідерів за допомогою Firebase.
 
-```html
-<main data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="index.main.partial.html"></main>
+### 🔥 Особливості
+
+- Рух змійки через клавіатуру або кнопки на екрані
+- Таблиця лідерів з Firebase Firestore
+- Збереження найкращого результату локально (LocalStorage)
+- Модальні вікна для введення ім'я, перегляду рекорду та кінця гри
+- Плавне збільшення швидкості гри при кожних 50 очках
+
+---
+
+### 📁 Структура проєкту
+
+```
+├— index.html                # Основна HTML-сторінка гри
+├— style/
+│   └— styles.css           # Стилі гри
+├— js/
+│   ├— main.js              # Основна логіка запуску гри
+│   ├— game.js              # Клас гри (логіка, оновлення, рендеринг)
+│   ├— snake.js             # Клас змійки
+│   ├— food.js              # Клас їжі
+│   ├— user.js              # Клас користувача (збереження результатів)
+│   ├— leaderboard.js       # Клас таблиці лідерів (робота з Firebase)
+│   └— firebase-config.js   # Конфігурація Firebase
+└— .github/workflows/
+    └— validate.yml         # GitHub Action для перевірки HTML
 ```
 
+---
 
-```js
-function init() {
-    import('...js');
-}
+### 🚀 Запуск
 
-const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
-let loadedPartialsCount = 0;
+1. Відкрити `index.html` у браузері.
+2. Ввести ім'я користувача (буде збережене у LocalStorage).
+3. Натиснути клавішу-стрілку або відповідну кнопку — гра почнеться.
 
-document.body.addEventListener('htmx:afterOnLoad', () => {
-    loadedPartialsCount++;
-    if (loadedPartialsCount === totalPartials) init();
-});
-```
+---
 
-Add the data-proofer-ignore attribute to any tag to ignore it from every check.
+### 📱 Firebase
 
-```html
-<a href="https://notareallink" data-proofer-ignore>Not checked.</a>
-```
+- Всі результати зберігаються у Firestore (`leaderboard` колекція)
+- Ідентифікація користувача здійснюється через унікальний `deviceId`, згенерований локально
+
