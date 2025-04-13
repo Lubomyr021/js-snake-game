@@ -1,0 +1,145 @@
+body {
+  font-family: "Cousine", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+#game-container {
+  position: relative;
+}
+
+#game-canvas {
+  border: 2px solid #333;
+  background-color: #fff;
+  display: block;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+button {
+  font-family: "Cousine", monospace;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #00853e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.control-btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 80%;
+}
+
+.leaderboard {
+  width: 400px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#close-leaderboard-btn {
+  margin-top: 20px;
+}
+
+.leaderboard h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  background-color: #00853e;
+  color: white;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.start-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}

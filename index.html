@@ -1,14 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="shortcut icon" href="https://placekitten.com/96/139" type="image/x-icon">
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-</head>
-<body>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/styles.css" />
+  </head>
+  <body>
+    <h1>Snake Game</h1>
+    <div class="game-info">
+      <span id="score">Очки: 0</span>
+      <span id="time">Час: 0 сек.</span>
+      <span id="best">Найкращий: 0</span>
+    </div>
 
-</body>
+    <div id="game-container">
+      <canvas id="game-canvas" width="400" height="400"></canvas>
+      <div id="start-message" class="start-message">
+        Натисніть стрілку для початку гри
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="restart-btn">Перезапуск</button>
+      <button id="record-btn">Рекорд</button>
+      <button id="leaderboard-btn">Таблиця лідерів</button>
+    </div>
+
+    <div class="controls">
+      <button class="control-btn" id="up-btn">↑</button>
+    </div>
+    <div class="controls">
+      <button class="control-btn" id="left-btn">←</button>
+      <button class="control-btn" id="down-btn">↓</button>
+      <button class="control-btn" id="right-btn">→</button>
+    </div>
+
+    <!-- Модальні вікна -->
+    <div id="name-modal" class="modal">
+      <div class="modal-content">
+        <h2>Введіть своє ім'я</h2>
+        <input type="text" id="username-input" placeholder="Ваше ім'я" />
+        <button id="save-name-btn">Зберегти</button>
+      </div>
+    </div>
+
+    <div id="record-modal" class="modal">
+      <div class="modal-content">
+        <h2>Ваш рекорд</h2>
+        <p id="record-info"></p>
+        <button id="close-record-btn">Закрити</button>
+      </div>
+    </div>
+
+    <div id="game-over-modal" class="modal">
+      <div class="modal-content">
+        <h2>Гра закінчена!</h2>
+        <p id="final-score"></p>
+        <p id="final-time"></p>
+        <button id="restart-game-btn">Почати знову</button>
+      </div>
+    </div>
+
+    <div id="leaderboard-modal" class="modal">
+      <div class="modal-content" style="width: 80%; max-width: 600px">
+        <h2>Таблиця лідерів</h2>
+        <div class="leaderboard">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>Місце</th>
+                <th>Ім'я</th>
+                <th>Очки</th>
+                <th>Час</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <!-- Дані з Firebase будуть тут -->
+            </tbody>
+          </table>
+        </div>
+        <button id="close-leaderboard-btn">Закрити</button>
+      </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Основний файл -->
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
