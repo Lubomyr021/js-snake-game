@@ -3,7 +3,7 @@
 
  Snake Game
 
-Classic arcade game * * Snake * *, implemented in pure JavaScript using HTML5 Canvas.
+Classic arcade game Snake , implemented in pure JavaScript using HTML5 Canvas.
 
  Features
 
