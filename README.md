@@ -15,7 +15,7 @@ Classic arcade game Snake , implemented in pure JavaScript using HTML5 Canvas.
 
 ---
 
- Структура проєкту
+ Structure of the project
 
 ```
 ├— index.html                # The main HTML page of the game
