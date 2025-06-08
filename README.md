@@ -1,33 +1,33 @@
 ![image](https://github.com/user-attachments/assets/f68dd564-13b7-4949-98fe-6527e3827522)
 
 
- 🐍 Snake Game
+ Snake Game
 
-Класична аркадна гра **Snake**, реалізована на чистому JavaScript з використанням HTML5 Canvas.
+Classic arcade game * * Snake * *, implemented in pure JavaScript using HTML5 Canvas.
 
- 🔥 Особливості
+ Features
 
-- Рух змійки через клавіатуру або кнопки на екрані
-- Таблиця лідерів з Firebase Firestore
-- Збереження найкращого результату локально (LocalStorage)
-- Модальні вікна для введення ім'я, перегляду рекорду та кінця гри
-- Плавне збільшення швидкості гри при кожних 50 очках
+- Movement of the snake through the keyboard or buttons on the screen
+- Leaderboard with Firebase Firestore
+- Save the best result locally (LocalStorage)
+- Modal windows for entering name, viewing record and end of game
+- Smooth increase in the speed of the game with every 50 points
 
 ---
 
- 📁 Структура проєкту
+ Структура проєкту
 
 ```
-├— index.html                # Основна HTML-сторінка гри
+├— index.html                # The main HTML page of the game
 ├— style/
-│   └— styles.css           # Стилі гри
+│   └— styles.css           # Styles
 ├— js/
-│   ├— main.js              # Основна логіка запуску гри
-│   ├— game.js              # Клас гри (логіка, оновлення, рендеринг)
-│   ├— snake.js             # Клас змійки
-│   ├— food.js              # Клас їжі
-│   ├— user.js              # Клас користувача (збереження результатів)
-│   ├— leaderboard.js       # Клас таблиці лідерів (робота з Firebase)
-│   └— firebase-config.js   # Конфігурація Firebase
+│   ├— main.js              # Basic logic of game launch
+│   ├— game.js              # Game class (logic, update, rendering)
+│   ├— snake.js             # Snake class
+│   ├— food.js              # Food class
+│   ├— user.js              # User class (save results)
+│   ├— leaderboard.js       # Leader Table Class 
+│   └— firebase-config.js   # Firebase Configuration
 
 ```
